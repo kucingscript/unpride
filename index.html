@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>360&deg; Universitas Nusantara PGRI Kediri</title>
+
+  <meta name="description" content="360&deg; Universitas Nusantara PGRI Kediri Image Gallery. Build with love by FTIK Teknik Informatika UNP Kediri" />
+  <meta name="authot" content="kucingscript, legaspie, yopy">
+  <meta name="keywords" content="unp kediri, unp kediri galeri, teknik informatika unp kediri, unp kediri 360">
+
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.jss"></script>
+  
+  <!-- Image link template to be reused. -->
+  <script id="link" type="text/html">
+      <a-entity
+        class="link"
+        geometry="primitive: plane; height: 0.7; width: 0.7"
+        material="shader: flat; src: ${thumb}; transparent: true; alphaTest: 0.5"
+        sound="on: click; src: #click-sound"
+        event-set__mouseenter="scale: 1.2 1.2 1"
+        event-set__mouseleave="scale: 1 1 1"
+        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        proxy-event="event: click; to: #image-360; as: fade"
+      ></a-entity>
+    </script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="kampus1" crossorigin="anonymous" src="assets/kampus1.jpg" />
+      <img id="kampus2" crossorigin="anonymous" src="assets/kampus2.jpg" />
+      <img id="kampus3" crossorigin="anonymous" src="assets/kampus3.jpg" />
+      <img id="kampus4" crossorigin="anonymous" src="assets/kampus4.jpg" />
+      <img id="kampus5" crossorigin="anonymous" src="assets/kampus5.jpg" />
+
+      <img id="kampus1-thumb" crossorigin="anonymous" src="assets/thumb/school.png" />
+      <img id="kampus2-thumb" crossorigin="anonymous" src="assets/thumb/laptop.png" />
+      <img id="kampus3-thumb" crossorigin="anonymous" src="assets/thumb/microscope.png" />
+      <img id="kampus4-thumb" crossorigin="anonymous" src="assets/thumb/field.png" />
+      <img id="kampus5-thumb" crossorigin="anonymous" src="assets/thumb/dna.png" />
+
+      <audio id="click-sound" crossorigin="anonymous"
+        src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+    </a-assets>
+
+    <!-- 360-degree image. -->
+    <a-sky id="image-360" radius="10" src="#kampus1"
+      animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+      animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
+
+    <!-- Image links. -->
+    <a-entity id="links" layout="type: line; margin: 1.5" position="-3 -0.5 -4">
+      <a-entity template="src: #link" data-src="#kampus1" data-thumb="#kampus1-thumb"></a-entity>
+      <a-entity template="src: #link" data-src="#kampus2" data-thumb="#kampus2-thumb"></a-entity>
+      <a-entity template="src: #link" data-src="#kampus3" data-thumb="#kampus3-thumb"></a-entity>
+      <a-entity template="src: #link" data-src="#kampus4" data-thumb="#kampus4-thumb"></a-entity>
+      <a-entity template="src: #link" data-src="#kampus5" data-thumb="#kampus5-thumb"></a-entity>
+    </a-entity>
+
+    <!-- Camera + cursor. -->
+    <a-entity>
+      <a-camera id="camera" look-controls="" wasd-controls-enabled="false" camera="active: true">
+        <a-cursor id="cursor" cursor="fuse: true; fuseTimeout: 1500; maxDistance: 30"
+          geometry="primitive: ring; radiusInner: 0.031; radiusOuter: 0.05" material="color: #00FFFF; shader: flat"
+          position="0 0 -1"
+          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+          animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1">
+        </a-cursor>
+      </a-camera>
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
