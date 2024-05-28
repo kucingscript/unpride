@@ -7,15 +7,21 @@
 
   <title>360&deg; Universitas Nusantara PGRI Kediri</title>
 
-  <meta name="description" content="360&deg; Universitas Nusantara PGRI Kediri Image Gallery. Build with love by FTIK Teknik Informatika UNP Kediri" />
-  <meta name="authot" content="kucingscript, legaspie, yopy">
-  <meta name="keywords" content="unp kediri, unp kediri galeri, teknik informatika unp kediri, unp kediri 360">
-
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
   <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
   <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.jss"></script>
+
+  <link rel="preload" href="assets/kampus1.jpg" as="image" />
+  <link rel="preload" href="assets/kampus2.jpg" as="image" />
+  <link rel="preload" href="assets/kampus3.jpg" as="image" />
+  <link rel="preload" href="assets/kampus4.jpg" as="image" />
+  <link rel="preload" href="assets/kampus5.jpg" as="image" />
+  
+  <meta name="description" content="360&deg; Universitas Nusantara PGRI Kediri Image Gallery. Build with love by FTIK Teknik Informatika UNP Kediri" />
+  <meta name="authot" content="kucingscript, legaspie, yopy">
+  <meta name="keywords" content="unp kediri, unp kediri galeri, teknik informatika unp kediri, unp kediri 360">
 
   <style>
     body {
@@ -58,24 +64,24 @@
 
   <a-scene>
     <a-assets>
-      <img id="kampus1" crossorigin="anonymous" src="assets/kampus1.jpg" />
-      <img id="kampus2" crossorigin="anonymous" src="assets/kampus2.jpg" />
-      <img id="kampus3" crossorigin="anonymous" src="assets/kampus3.jpg" />
-      <img id="kampus4" crossorigin="anonymous" src="assets/kampus4.jpg" />
-      <img id="kampus5" crossorigin="anonymous" src="assets/kampus5.jpg" />
+      <img id="kampus1" crossorigin="anonymous" src="assets/kampus1.jpg" alt="kampus1 unp kediri" />
+      <img id="kampus2" crossorigin="anonymous" src="assets/kampus2.jpg" alt="kampus2 unp kediri" />
+      <img id="kampus3" crossorigin="anonymous" src="assets/kampus3.jpg" alt="kampus3 unp kediri" />
+      <img id="kampus4" crossorigin="anonymous" src="assets/kampus4.jpg" alt="kampus4 unp kediri" />
+      <img id="kampus5" crossorigin="anonymous" src="assets/kampus5.jpg" alt="kampus5 unp kediri" />
 
-      <img id="kampus1-thumb" crossorigin="anonymous" src="assets/thumb/school.png" />
-      <img id="kampus2-thumb" crossorigin="anonymous" src="assets/thumb/laptop.png" />
-      <img id="kampus3-thumb" crossorigin="anonymous" src="assets/thumb/microscope.png" />
-      <img id="kampus4-thumb" crossorigin="anonymous" src="assets/thumb/field.png" />
-      <img id="kampus5-thumb" crossorigin="anonymous" src="assets/thumb/dna.png" />
+      <img id="kampus1-thumb" crossorigin="anonymous" src="assets/thumb/school.png" alt="thumbnail kampus1 unp kediri"/>
+      <img id="kampus2-thumb" crossorigin="anonymous" src="assets/thumb/laptop.png" alt="thumbnail kampus2 unp kediri"/>
+      <img id="kampus3-thumb" crossorigin="anonymous" src="assets/thumb/microscope.png" alt="thumbnail kampus3 unp kediri"/>
+      <img id="kampus4-thumb" crossorigin="anonymous" src="assets/thumb/field.png" alt="thumbnail kampus4 unp kediri"/>
+      <img id="kampus5-thumb" crossorigin="anonymous" src="assets/thumb/dna.png" alt="thumbnail kampus5 unp kediri"/>
 
       <audio id="click-sound" crossorigin="anonymous"
         src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
     </a-assets>
 
     <!-- 360-degree image. -->
-    <a-sky id="image-360" radius="10" src="#kampus1"
+    <a-sky id="image-360" radius="10" src="#kampus1" scale=""
       animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
       animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
