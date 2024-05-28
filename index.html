@@ -7,21 +7,21 @@
 
   <title>360&deg; Universitas Nusantara PGRI Kediri</title>
 
+  <meta name="description" content="360&deg; Universitas Nusantara PGRI Kediri Image Gallery. Build with love by FTIK Teknik Informatika UNP Kediri" />
+  <meta name="author" content="kucingscript, legaspie, yopy">
+  <meta name="keywords" content="unp kediri, unp kediri galeri, teknik informatika unp kediri, unp kediri 360">
+
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
   <script src="https://unpkg.com/aframe-layout-component@4.x.x/dist/aframe-layout-component.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
   <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.jss"></script>
 
-  <link rel="preload" href="assets/kampus1.jpg" as="image" />
-  <link rel="preload" href="assets/kampus2.jpg" as="image" />
-  <link rel="preload" href="assets/kampus3.jpg" as="image" />
-  <link rel="preload" href="assets/kampus4.jpg" as="image" />
-  <link rel="preload" href="assets/kampus5.jpg" as="image" />
-  
-  <meta name="description" content="360&deg; Universitas Nusantara PGRI Kediri Image Gallery. Build with love by FTIK Teknik Informatika UNP Kediri" />
-  <meta name="authot" content="kucingscript, legaspie, yopy">
-  <meta name="keywords" content="unp kediri, unp kediri galeri, teknik informatika unp kediri, unp kediri 360">
+  <link rel="preload" href="assets/kampus1.jpg" as="image">
+  <link rel="preload" href="assets/kampus2.jpg" as="image">
+  <link rel="preload" href="assets/kampus3.jpg" as="image">
+  <link rel="preload" href="assets/kampus4.jpg" as="image">
+  <link rel="preload" href="assets/kampus5.jpg" as="image">
 
   <style>
     body {
@@ -81,7 +81,7 @@
     </a-assets>
 
     <!-- 360-degree image. -->
-    <a-sky id="image-360" radius="10" src="#kampus1" scale=""
+    <a-sky id="image-360" radius="10" src="#kampus1"
       animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
       animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
 
